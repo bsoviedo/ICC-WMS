@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='es'>
+    <head>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' href='css/main.css'>
+        <title> Descripción </title>
+    </head>
+    <body>
+        <header>
+            <h1>Proceso manejo de datos </h1>
+            <nav> 
+                <a href='index.html'> Geovisor </a> 
+                <a href='Process.html'>Detalles del proceso </a>
+            </nav>
+        </header>
+    <section>
+    <h2>Flujo de datos </h2>
+    <p>Se presentan el flujo de trabajo de los datos para la realización de la prueba de conocimiento. </p>   
+
+    <img src='../geovisor_WMS/Imagenes/FLUJO.png' alt='flujo de trabajo' width="950px"/>
+    <h2>Preparando la base de datos </h2>
+    <h3>Datos iniciales</h3>
+    <p> Desde los datos iniciales se puede observar que hay una relevancia con respecto al lugar de localización, por lo cual se
+    hace necesario prestar especial atención a la componente espacial de las relaciones. Estas se harán mediante un Join 
+por el campo del nombre. Mientras que los otros campos se relacionarán entre si mediante diferentes id.</p> 
+    <img src='../geovisor_WMS/Imagenes/datos.PNG' alt='datos iniciales'/>
+    <h3>Modelo entidad- relación</h3>
+    
+    <p> En la siguiente se puede observar la conceptualización del modelo entidad relación que será creado en
+        postgressql usando también la extensión espacial postgis.
+    </p>
+    <img src='../geovisor_WMS/Imagenes/entidad-relacion.PNG' alt='modelo entidad relación'/>
+    <h2>Creando la base de datos en Postgis </h2>
+    <p>Posteriormente, en postgressql se crean las tablas correspondientes en una base de datos previamente creada </p>
+    <img src='../geovisor_WMS/Imagenes/CREACIÓN TABLAS POSTGRES.PNG' alt='script creación tablas'/>
+    <p>Y se le añaden los datos correspondientes. </p>
+    <img src='../geovisor_WMS/Imagenes/INGRESODATOS.PNG' alt='script ingreso datos'/>
+    <P> Posteriormente, se añade la capa espacial a la base de datos, se extraen los centroides y se hace un join para que cada registro de la base de datos
+        tenga información espacial.
+    Cada registro estará geolocalizado con respecto al centroide del municipio del cual hace parte.</p>
+    <img src='../geovisor_WMS/Imagenes/JOIN.PNG' alt='script join'/>
+    <p>
+    Generando la siguiente capa:
+    </P>
+    <img src='../geovisor_WMS/Imagenes/CENTROIDES.PNG' alt='modelo entidad relación'/>
+    <p>Por último, como resultado de los join, se genera la capa que será llevada a geoserver para su despliegue posterior</p>
+    <img src='../geovisor_WMS/Imagenes/SUBIR CAPAS AGEOSERVER.PNG' alt='imagen capas subidas a geoserver'/>
+
+   
+   
+    <h2>Enlazando el WMS a leaflet y desplegando el mapa web</h2>
+    <p> En este punto, se hace uso de la función L.Tilemap() que trae los datos del servicio WMS al navegador. Recordando que los WMS 
+        despliegan imagenes, si bien el despliegue de pop ups es posible, requiere de algunas funciones externas a Leaflet como lo son Jquery
+        y AJAX.
+     </p>
+    <img src='../geovisor_WMS/Imagenes/ADD.PNG' alt='script carga WMS'/>
+    <p> Por último, se añade al mapa con la función .addTo(Map) y ya quedan desplegados los datos del WMS en el geovisor</p>
+
+</section>
+    </body>
+</html>
