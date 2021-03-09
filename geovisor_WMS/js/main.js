@@ -45,7 +45,7 @@ var content= "<br>  <p> Esta página esta construida llamando los datos desde un
 "es probable que el geoserver mediante el cual se suben los archivos no se encuentre activo. Por lo cual, debo volver a hacer "+
 "enfasís en que estos datos solo se despliegan SI este se encuentra activo. Por esto es una opción interesante el uso de geojson "+
 " combinado con plugins que agrupen los datos para su despliegue, tales como 'Markercluster' "+
-" <br> Por favor, siga este <a href='EMPTY'>enlace </a> para observar detalladamente el proceso de creación de las capas postgis "+
+" <br> Por favor, siga este <a href='Process.html'>enlace </a> para observar detalladamente el proceso de creación de las capas postgis "+
 "hasta geoserver y la forma en que estan llamados acá. ";
 content += "<h2>Metadatos </h2>"
 content += "Epsg: 4686 <br>"
