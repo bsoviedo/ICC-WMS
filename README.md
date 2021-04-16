@@ -1,3 +1,3 @@
 # ICC-WMS
 
-Enlace completo:  https://bsoviedoy.github.io/ICC-WMS/geovisor_WMS/index.html
+Enlace completo:  https://bsoviedo.github.io/ICC-WMS/geovisor_WMS/index.html
